@@ -1,13 +1,11 @@
 <div class="container">
     <img src="assets/img/task-list-null.png" alt="Ilustração lista de tarefas" loading="eager" width="" height="">
 
-    <button class="btn btn-primary">Crie uma lista de Tarefas</button>
 
-    <div>
-        <label class="input-label-text" for="inputValue">
-            <input type="text" placeholder="Adicione uma nova tarefa" id="inputValue" autofocus>
-            <button class="btn btn-primary-circle" title="Adicionar uma nova tarefa">    
-            </button>
-        </label>
-    </div>
+    @if (addItem()) {
+        <button class="btn btn-primary" (click)="addItem.set(false)">Crie uma lista de Tarefas</button>
+    } @else {
+        <app-input-add-item/>
+
+    }
 </div>
