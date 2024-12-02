@@ -5,7 +5,7 @@
     @if (addItem()) {
         <button class="btn btn-primary" (click)="addItem.set(false)">Crie uma lista de Tarefas</button>
     } @else {
-        <app-input-add-item/>
-
+        <app-input-add-item (outputAddListItems)="getInputAndAddItem($event)"/>
+        
     }
 </div>
